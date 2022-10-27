@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <AssemblyName>LibraryManagement.Author.Domain</AssemblyName>
+        <RootNamespace>LibraryManagement.Author.Domain</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MessagePack.Annotations" Version="2.4.35" />
+    </ItemGroup>
+
+</Project>
