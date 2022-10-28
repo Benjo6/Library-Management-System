@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Modules\Auth
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Modules\Book\Application\Application.csproj", "{05FC9096-30C0-444B-9620-4B1C44A4C21C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseSeeder", "DbSeeder\DatabaseSeeder.csproj", "{CAB13F3D-EC6D-4D41-A078-C627539830B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseSeeder", "DbSeeder\DatabaseSeeder.csproj", "{CAB13F3D-EC6D-4D41-A078-C627539830B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
