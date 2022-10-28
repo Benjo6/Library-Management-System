@@ -4,6 +4,7 @@ using LibraryManagement.Book.Application.Contracts.Commands.CreateBook;
 using LibraryManagement.Book.Application.Contracts.Commands.RemoveBook;
 using LibraryManagement.Book.Application.Contracts.Queries.GetAllBooks;
 using LibraryManagement.Book.Application.Contracts.Queries.GetBook;
+using LibraryManagement.Book.Application.Contracts.Queries.GetSuggestedBooks;
 
 namespace LibraryManagement.Book.Application
 {
@@ -11,7 +12,10 @@ namespace LibraryManagement.Book.Application
     {
         Task<GetBookQueryResponse> GetBookAsync(GetBookQuery bookQuery);
         Task<List<GetBookQueryResponse>> GetAllBooksAsync(GetAllBooksQuery query);
+        
+        Task<List<GetSuggestedBooksQueryResponse>> SuggestedBooksAsync(GetSuggestedBooksQuery query);
         Task<CreateBookCommandResponse> AddBookAsync(CreateBookCommand request);
         Task<RemoveBookCommandResponse> RemoveBook(RemoveBookCommand request);
+
     }
 }

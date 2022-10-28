@@ -8,11 +8,24 @@ service Book {
 	rpc GetAllBooks (google.protobuf.Empty) returns (GetAllBooksResponse);
 	rpc AddBook (AddBookRequest) returns (AddBookResponse);
 	rpc RemoveBook (RemoveBookRequest) returns (RemoveBookResponse);
+	rpc GetSuggestedBooks(SuggestedBooksRequest) returns (SuggestedBooksResponse);
 }
-
-message AddBookRequest {
+message SuggestedBooksRequest{
+	int32 Id = 1;
+}
+message SuggestedBooksResponse{
 	string name = 1;
 	int32 author_Id = 2;
+	int32 year =3;
+	int32 price = 4;
+	string category=5;
+}
+message AddBookRequest {
+	string name = 2;
+	int32 stock =3;
+	string category=4;
+	int32 year=5;
+	int32 author_Id = 6;
 }
 
 message AddBookResponse {
@@ -26,7 +39,11 @@ message GetBookRequest {
 message GetBookResponse {
 	int32 Id = 1;
 	string name = 2;
-	int32 author_Id = 3;
+	int32 stock =3;
+	string category=4;
+	int32 price =5;
+	int32 year=6;
+	int32 author_Id = 7;
 }
 
 message GetAllBooksResponse {

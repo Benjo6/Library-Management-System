@@ -8,6 +8,7 @@ using LibraryManagement.Book.Application.Contracts.Commands.CreateBook;
 using LibraryManagement.Book.Application.Contracts.Commands.RemoveBook;
 using LibraryManagement.Book.Application.Contracts.Queries.GetAllBooks;
 using LibraryManagement.Book.Application.Contracts.Queries.GetBook;
+using LibraryManagement.Book.Application.Contracts.Queries.GetSuggestedBooks;
 using LibraryManagement.Protobuf;
 
 namespace LibraryManagement.Book.Service
@@ -37,6 +38,15 @@ namespace LibraryManagement.Book.Service
                 GetBookResponse = { _mapper.Map<List<GetBookQueryResponse>,List<GetBookResponse>>(response) }
             };
         }
+
+        public override async Task<SuggestedBooksResponse> GetSuggestedBooks(SuggestedBooksRequest request, ServerCallContext context)
+        {
+            var response =
+                await _bookApplicationService.SuggestedBooksAsync(_mapper.Map<GetSuggestedBooksQuery>(request));
+            return _mapper.Map<SuggestedBooksResponse>(response);
+
+        }
+
 
         public override async Task<AddBookResponse> AddBook(AddBookRequest request, ServerCallContext context)
         {

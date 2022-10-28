@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
@@ -6,6 +7,7 @@ using LibraryManagement.Book.Application.Contracts.Commands.CreateBook;
 using LibraryManagement.Book.Application.Contracts.Commands.RemoveBook;
 using LibraryManagement.Book.Application.Contracts.Queries.GetAllBooks;
 using LibraryManagement.Book.Application.Contracts.Queries.GetBook;
+using LibraryManagement.Book.Application.Contracts.Queries.GetSuggestedBooks;
 using LibraryManagement.Book.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
@@ -41,7 +43,19 @@ namespace LibraryManagement.Book.Application
 
             return books;
         }
-        
+
+        public async Task<List<GetSuggestedBooksQueryResponse>> SuggestedBooksAsync(GetSuggestedBooksQuery query)
+        {
+            var requestedBook = await _bookDbContext.Books
+                .AsNoTracking()
+                .ProjectTo<GetSuggestedBooksQueryResponse>(_mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(x => x.AuthorId == query.Id);
+            
+            var books = await _bookDbContext.Books.AsNoTracking().ProjectTo<GetSuggestedBooksQueryResponse>(_mapper.ConfigurationProvider).Where(x => x.Category == requestedBook.Category).ToListAsync();
+
+            return books;
+        }
+
         public async Task<CreateBookCommandResponse> AddBookAsync(CreateBookCommand request)
         {
             var book = new Domain.Book

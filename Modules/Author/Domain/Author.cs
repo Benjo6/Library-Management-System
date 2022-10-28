@@ -7,9 +7,9 @@ namespace LibraryManagement.Author.Domain
     [Table("Author"), MessagePackObject(keyAsPropertyName: true)]
     public class Author
     {
-        [Column("Id"), System.ComponentModel.DataAnnotations.Key]
+        [Column("id"), System.ComponentModel.DataAnnotations.Key]
         public int Id { get; set; }
-        [Column("Name"), MaxLength(64)]
+        [Column("name"), MaxLength(45)]
         public string Name { get; set; }
     }
 }

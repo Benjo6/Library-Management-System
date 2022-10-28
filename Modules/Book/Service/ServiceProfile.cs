@@ -3,6 +3,7 @@ using AutoMapper;
 using LibraryManagement.Book.Application.Contracts.Commands.CreateBook;
 using LibraryManagement.Book.Application.Contracts.Commands.RemoveBook;
 using LibraryManagement.Book.Application.Contracts.Queries.GetBook;
+using LibraryManagement.Book.Application.Contracts.Queries.GetSuggestedBooks;
 using LibraryManagement.Protobuf;
 
 namespace LibraryManagement.Book.Service
@@ -17,6 +18,9 @@ namespace LibraryManagement.Book.Service
             CreateMap<CreateBookCommandResponse, AddBookResponse>();
             CreateMap<RemoveBookRequest,RemoveBookCommand>();
             CreateMap<RemoveBookCommandResponse,RemoveBookResponse>();
+            CreateMap<GetSuggestedBooksQuery,SuggestedBooksRequest>();
+            CreateMap<GetSuggestedBooksQueryResponse, SuggestedBooksResponse>();
+
         }
     }
 }

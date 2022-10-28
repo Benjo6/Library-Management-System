@@ -7,6 +7,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Infrastructure\.git\config" />
+    <None Include="Infrastructure\.git\description" />
+    <None Include="Infrastructure\.git\FETCH_HEAD" />
+    <None Include="Infrastructure\.git\HEAD" />
+    <None Include="Infrastructure\.git\hooks\applypatch-msg.sample" />
+    <None Include="Infrastructure\.git\hooks\commit-msg.sample" />
+    <None Include="Infrastructure\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="Infrastructure\.git\hooks\post-update.sample" />
+    <None Include="Infrastructure\.git\hooks\pre-applypatch.sample" />
+    <None Include="Infrastructure\.git\hooks\pre-commit.sample" />
+    <None Include="Infrastructure\.git\hooks\pre-merge-commit.sample" />
+    <None Include="Infrastructure\.git\hooks\pre-push.sample" />
+    <None Include="Infrastructure\.git\hooks\pre-rebase.sample" />
+    <None Include="Infrastructure\.git\hooks\pre-receive.sample" />
+    <None Include="Infrastructure\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="Infrastructure\.git\hooks\push-to-checkout.sample" />
+    <None Include="Infrastructure\.git\hooks\update.sample" />
+    <None Include="Infrastructure\.git\index" />
+    <None Include="Infrastructure\.git\info\exclude" />
+    <None Include="Infrastructure\.git\logs\HEAD" />
+    <None Include="Infrastructure\.git\logs\refs\heads\master" />
+    <None Include="Infrastructure\.git\logs\refs\remotes\origin\HEAD" />
+    <None Include="Infrastructure\.git\objects\pack\pack-e1848c93834cf95cb37be78d050629255ef2279d.idx" />
+    <None Include="Infrastructure\.git\objects\pack\pack-e1848c93834cf95cb37be78d050629255ef2279d.pack" />
+    <None Include="Infrastructure\.git\packed-refs" />
+    <None Include="Infrastructure\.git\refs\heads\master" />
+    <None Include="Infrastructure\.git\refs\remotes\origin\HEAD" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.32.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
   </ItemGroup>
@@ -30,6 +60,11 @@
       <Generator>MSBuild:Compile</Generator>
       <Link>Protos\author.proto</Link>
     </Protobuf>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Infrastructure\.git\objects\info\" />
+    <Folder Include="Infrastructure\.git\refs\tags\" />
   </ItemGroup>
 
 </Project>
