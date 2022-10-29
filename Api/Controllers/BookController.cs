@@ -11,6 +11,7 @@ namespace LibraryManagementSystem.Api.Controllers
         public async Task<IActionResult> Get()
         {
             var response = await Service.GetAllBooksAsync(new Empty());
+           
             return Ok(response.GetBookResponse);
         }
         
@@ -34,5 +35,14 @@ namespace LibraryManagementSystem.Api.Controllers
             var response = await Service.RemoveBookAsync(request);
             return Ok(response);
         }
+        [HttpGet("suggest/{id}")]
+        public async Task<IActionResult> SuggestBook(int id)
+        {
+            var response = await Service.GetSuggestedBooksAsync(new SuggestedBooksRequest { Id = id });
+            return Ok(response);
+        }
+
+
+
     }
 }
