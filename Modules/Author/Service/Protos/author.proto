@@ -6,15 +6,29 @@ option csharp_namespace = "LibraryManagement.Protobuf";
 service Author {
 	rpc GetAuthor (GetAuthorRequest) returns (GetAuthorResponse);
 	rpc GetAllAuthors (google.protobuf.Empty) returns (GetAllAuthorsResponse);
+	rpc AddAuthor(AddAuthorRequest) returns(AddAuthorResponse);
+	rpc RemoveAuthor(RemoveAuthorRequest) returns(RemoveAuthorResponse);
+}
+message AddAuthorRequest{
+	string name = 2;
+}
+message AddAuthorResponse{
+	int32 Id=1;
+}
+message RemoveAuthorRequest{
+	int32 Id=1;
+}
+message RemoveAuthorResponse{
+	bool deleted=1;
 }
 
 message GetAuthorRequest {
-	int32 authorId = 1;
+	int32 Id = 1;
 }
 
 message GetAuthorResponse {
-	int32 authorId = 1;
-	string authorName = 2;
+	int32 Id = 1;
+	string Name = 2;
 }
 
 message GetAllAuthorsResponse {

@@ -61,7 +61,11 @@ namespace LibraryManagement.Book.Application
             var book = new Domain.Book
             {
                 Name = request.Name,
-                AuthorId = request.AuthorId
+                Category = request.Category,
+                AuthorId = request.AuthorId,
+                Year = request.Year,
+                Stock = request.Stock,
+                Price = request.Price
             };
 
             await _bookDbContext.Books.AddAsync(book);

@@ -3,10 +3,10 @@
     public record CreateBookCommand
     {
         public string Name { get; init; } = default!;
-        public int Stock { get; set; }
-        public float Price { get; set; }
-        public string Category { get; set; }
-        public int Year { get; set; }
+        public int Stock { get; init; }
+        public float Price { get; init; }
+        public string Category { get; init; } = default!;
+        public int Year { get; init; }
         public int AuthorId { get; init; }
     }
 }

@@ -4,9 +4,4 @@
     {
         public int Id { get; set; }
     }
-    
-    public class RemoveBookCommandResponse
-    {
-        public bool Deleted { get; set; }
-    }
 }
