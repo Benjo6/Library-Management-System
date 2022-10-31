@@ -38,7 +38,7 @@ namespace LibraryManagementSystem.Api.Controllers
         [HttpGet("suggest/{id}")]
         public async Task<IActionResult> SuggestBook(int id)
         {
-            var response = await Service.GetSuggestedBooksAsync(new SuggestedBooksRequest { Id = id });
+            var response =   Service.GetSuggestedBooks(new SuggestedBooksRequest { Id = id });
             return Ok(response);
         }
 

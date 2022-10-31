@@ -24,10 +24,11 @@ namespace LibraryManagement.Book.Service
         {
             services.AddGrpc();
             services.AddApplication();
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(typeof(ServiceProfile));
             services.AddDbContext<BookDbContext>(option =>
             {
-                option.UseSqlServer(Configuration["DbConnection"]);
+                option.UseMySQL("Server=localhost;Database=mydb;Port=3307;Persist Security Info=True;User=root;Password=abed123;"
+                );
             });
         }
 

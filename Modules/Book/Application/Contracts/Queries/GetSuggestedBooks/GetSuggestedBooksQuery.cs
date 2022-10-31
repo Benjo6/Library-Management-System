@@ -1,7 +1,7 @@
 namespace LibraryManagement.Book.Application.Contracts.Queries.GetSuggestedBooks
 {
-    public record GetSuggestedBooksQuery
+    public class GetSuggestedBooksQuery
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
     }
 }

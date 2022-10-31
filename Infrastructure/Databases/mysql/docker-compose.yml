@@ -1,0 +1,11 @@
+version: "3"
+services:
+  database:
+    image: mysql
+    ports:
+      - 3307:3306
+    command: --init-file /home/initdb.sql
+    volumes:
+      - ./seed.sql:/home/initdb.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: abed123

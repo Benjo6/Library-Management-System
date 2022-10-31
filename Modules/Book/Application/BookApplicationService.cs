@@ -47,9 +47,7 @@ namespace LibraryManagement.Book.Application
         public async Task<List<GetSuggestedBooksQueryResponse>> SuggestedBooksAsync(GetSuggestedBooksQuery query)
         {
             var requestedBook = await _bookDbContext.Books
-                .AsNoTracking()
-                .ProjectTo<GetSuggestedBooksQueryResponse>(_mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(x => x.AuthorId == query.Id);
+                .AsNoTracking().FirstOrDefaultAsync(x => x.AuthorId == query.Id);
             
             var books = await _bookDbContext.Books.AsNoTracking().ProjectTo<GetSuggestedBooksQueryResponse>(_mapper.ConfigurationProvider).Where(x => x.Category == requestedBook.Category).ToListAsync();
 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Google.Protobuf.WellKnownTypes;
@@ -39,11 +40,15 @@ namespace LibraryManagement.Book.Service
             };
         }
 
-        public override async Task<SuggestedBooksResponse> GetSuggestedBooks(SuggestedBooksRequest request, ServerCallContext context)
+        public override async Task<GetAllSuggestedBooksResponse> GetSuggestedBooks(SuggestedBooksRequest request, ServerCallContext context)
         {
             var response =
                 await _bookApplicationService.SuggestedBooksAsync(_mapper.Map<GetSuggestedBooksQuery>(request));
-            return _mapper.Map<SuggestedBooksResponse>(response);
+            return new GetAllSuggestedBooksResponse()
+            {
+                GetSuggestedBookResponse =
+                    { _mapper.Map<List<GetSuggestedBooksQueryResponse>, List<SuggestedBooksResponse>>(response) }
+            };
 
         }
 

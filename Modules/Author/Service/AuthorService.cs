@@ -16,10 +16,10 @@ namespace LibraryManagement.Author.Service
 {
     public class AuthorService : Protobuf.Author.AuthorBase
     {
-        private readonly AuthorApplicationService _authorApplicationService;
+        private readonly IAuthorApplicationService _authorApplicationService;
         private readonly IMapper _mapper;
 
-        public AuthorService(AuthorApplicationService authorApplicationService,IMapper mapper)
+        public AuthorService(IAuthorApplicationService authorApplicationService,IMapper mapper)
         {
             _authorApplicationService = authorApplicationService;
             _mapper = mapper;

@@ -1,4 +1,6 @@
-﻿using LibraryManagement.Author.Infrastructure;
+﻿using System.Reflection;
+using LibraryManagement.Author.Application;
+using LibraryManagement.Author.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,9 +23,12 @@ namespace LibraryManagement.Author.Service
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddGrpc();
+            services.AddApplication();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddDbContext<AuthorDbContext>(option =>
             {
-                option.UseSqlServer(Configuration["DbConnection"]);
+                option.UseMySQL("Server=localhost;Database=mydb;Port=3307;Persist Security Info=True;User=root;Password=abed123;"
+                );
             });
         }
 

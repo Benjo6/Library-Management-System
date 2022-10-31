@@ -16,8 +16,9 @@ namespace LibraryManagement.Book.Domain
         public int Stock { get; set; }
         [Column ("price")] 
         public float Price { get; set; }
+
         [Column("category")] 
-        public string Category { get; set; }
+        public string Category { get; set; } = default!;
         [Column("year")] 
         public int Year { get; set; }
         [Column("Author_Id")]

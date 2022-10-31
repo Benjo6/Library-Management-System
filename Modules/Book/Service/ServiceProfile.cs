@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using AutoMapper;
+﻿using AutoMapper;
 using LibraryManagement.Book.Application.Contracts.Commands.CreateBook;
 using LibraryManagement.Book.Application.Contracts.Commands.RemoveBook;
 using LibraryManagement.Book.Application.Contracts.Queries.GetBook;
@@ -18,7 +17,7 @@ namespace LibraryManagement.Book.Service
             CreateMap<CreateBookCommandResponse, AddBookResponse>();
             CreateMap<RemoveBookRequest,RemoveBookCommand>();
             CreateMap<RemoveBookCommandResponse,RemoveBookResponse>();
-            CreateMap<GetSuggestedBooksQuery,SuggestedBooksRequest>();
+            CreateMap<SuggestedBooksRequest,GetSuggestedBooksQuery>();
             CreateMap<GetSuggestedBooksQueryResponse, SuggestedBooksResponse>();
 
         }
