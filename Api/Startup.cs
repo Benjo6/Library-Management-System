@@ -1,5 +1,6 @@
 using System;
 using LibraryManagement.Protobuf;
+using Main;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +29,10 @@ namespace LibraryManagementSystem.Api
             services.AddGrpcClient<Author.AuthorClient>(o =>
             {
                 o.Address = new Uri(_configuration["ServicesConfiguration:AuthorServiceUrl"]);
+            });
+            services.AddGrpcClient<Students.StudentsClient>(o =>
+            {
+                o.Address = new Uri(_configuration["ServicesConfiguration:StudentServiceUrl"]);
             });
             
             services.AddSwaggerGen();
