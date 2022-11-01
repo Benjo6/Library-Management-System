@@ -1,6 +1,7 @@
 # Assignment 4: Mini-Project 3: APIs
 
-**Description of the project and mandatory requirement**
+### Description of the project and mandatory requirement
+
 The objective of this assignment is to let you compare, choose, design, and implement
 various APIs as a mean of inter-service communication in microservices architecture.
 The task is to extend the School Micro Info System with services that allow the students to
