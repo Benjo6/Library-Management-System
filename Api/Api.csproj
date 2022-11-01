@@ -30,7 +30,7 @@
       <Generator>MSBuild:Compile</Generator>
       <Link>Protos\author.proto</Link>
     </Protobuf>
-	  <Protobuf Include="C:\Users\Benjamin Curovic\Downloads\SIA3\SIA3-master\proto\students.proto">
+	  <Protobuf Include="..\Modules\Student\proto\students.proto">
 		  <GrpcServices>Client</GrpcServices>
 		  <Access>Public</Access>
 		  <ProtoCompile>True</ProtoCompile>

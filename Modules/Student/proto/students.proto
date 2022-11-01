@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package main;
+
+option go_package = ".";
+
+
+service Students {
+    rpc CreateStudent (CreateStudentRequest) returns (Student) {};
+    rpc GetAllStudents (empty) returns (GetAllStudentsResponse) {};
+    rpc GetStudentById (StudentID) returns (Student) {};
+    rpc DeleteStudent (StudentID) returns (messageResponse) {};
+}
+
+message empty {
+
+}
+
+message messageResponse {
+    string msg = 1;
+}
+
+message GetAllStudentsResponse {
+    repeated Student students = 1;
+}
+
+message Student {
+    int32 id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    float balance = 4;
+}
+
+message CreateStudentRequest {
+    string firstname = 2;
+    string lastname = 3;
+    float balance = 4;
+}
+
+message StudentID {
+    int32 id = 1;
+}
