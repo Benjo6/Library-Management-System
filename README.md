@@ -56,6 +56,24 @@ Post(CreateStudentRequest request) = It creates a new student into the database.
 
 Delete(int id) = It removes the inserted id from the database.
 
+## How To Start The Database
+
+### prerequisite
+* Docker installed
+
+### Instructions
+
+* cd into Infrastructure/Databases/mysql
+* run command: docker-compose -f docker-compose.yml up -d
+
+Now you should have a mysql database with data. It can be accessed in mysql workbench with the following credentials:
+
+* host: 127.0.0.1
+* port: 3307
+* user: root
+* password: abed123
 
 ### How To Start The Program
+
+
 
