@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	pb "abed01/grpc/gen/proto"
+	pb "abed01/grpc/Modules/Student/gen/proto"
 
 	_ "github.com/go-sql-driver/mysql"
 )

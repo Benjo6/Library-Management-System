@@ -6,8 +6,8 @@ import (
 	"log"
 	"net"
 
-	mapper "abed01/grpc/database"
-	pb "abed01/grpc/gen/proto"
+	mapper "abed01/grpc/Modules/Student/database"
+	pb "abed01/grpc/Modules/Student/gen/proto"
 
 	"google.golang.org/grpc"
 )
