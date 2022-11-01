@@ -23,7 +23,7 @@ For fulfilling the requirements of the project have we constructed the classes i
 
 The Methods are mainly simple CRUD functionalities, but we also made a suggest book method, which searching for books of same category. The idea behind this is when you are selecting a book on the website, then it will show books of the same category as suggested books.
 
-*Author*
+**Author**
 
 Get() = It returns a list of all authors in the database.
 
@@ -33,7 +33,7 @@ Post(AddAuthorRequest request) = It creates a new author into the database.
 
 Delete(RemoveRequest request) = It removes the inserted author from the database.
 
-*Book*
+**Book**
 
 Get() = It returns a list of all books in the database.
 
@@ -45,7 +45,7 @@ Delete(RemoveBookRequest request) = It removes the inserted id from the database
 
 SuggestBook(int id) = It returns all books with the same category as the insert book (via id). In a final project on an interface should it probably return only five books.
 
-*Student*
+**Student**
 
 Get() = It returns a list of all students in the database.
 
@@ -56,5 +56,5 @@ Post(CreateStudentRequest request) = It creates a new student into the database.
 Delete(int id) = It removes the inserted id from the database.
 
 
-## How To Start The Program
+### How To Start The Program
 
