@@ -16,7 +16,7 @@ and at least one gRPC API.
 
 ### Architecture
 
-[Image of ER Diagram]
+![](https://github.com/Benjo6/Library-Management-System/blob/master/Images/ER-Diagram.png) 
 
 For fulfilling the requirements of the project have we constructed the classes in Grpc Servers, while REST is used to act as client for the Grpc Servers. We could made one of the Grpc Server into a REST Server, but we decided it would be more interesting to experiment with Grpc. The REST Server also offers that the Grpc Servers have web browser support, which makes it possible to try the methods in Swagger. We also decided to make the Grpc servers in two different programming languages to showcase two ways of implementing Grpc Servers. The languages are Go and C#.
 
@@ -75,5 +75,20 @@ Now you should have a mysql database with data. It can be accessed in mysql work
 
 ### How To Start The Program
 
+- Clone the Github Repo
 
+- Open the project in Visual Studio Code
 
+- Then Run all Services in the project
+
+**For C# Projects**
+
+Use this command for each service under Modules except for the Go Project (Student)
+
+dotnet run
+
+**For Go Project**
+
+Add Coderunner to your Visual Studio Code and run the Server.go file.
+
+Last: Run the API project with the same command as the other C# Projects.
