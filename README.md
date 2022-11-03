@@ -73,7 +73,7 @@ Now you should have a mysql database with data. It can be accessed in mysql work
 * user: root
 * password: abed123
 
-### How To Start The Program
+## How To Start The Program
 
 - Clone the Github Repo
 
