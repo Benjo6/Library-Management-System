@@ -1,4 +1,4 @@
-# Assignment 4: Mini-Project 3: APIs
+# Assignment 3: Mini-Project 3: APIs
 
 ### Description of the project and mandatory requirement
 
